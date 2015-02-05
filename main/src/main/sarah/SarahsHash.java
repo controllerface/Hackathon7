@@ -1,4 +1,6 @@
-import java.awt.image.BufferedImage;
+package main.sarah;
+
+import main.interfaces.Hash;
 
 /**
  * Created by Fancy on 2/5/15.

@@ -1,13 +1,14 @@
+package main.stephen;
+
+import main.interfaces.Hash;
+import main.interfaces.Hasher;
+
 /**
- * Created by Fancy on 2/5/15.
+ * Created by Controllerface on 2/5/2015.
  */
-public class SarahsHasher implements Hasher {
+public class StephensHasher implements Hasher {
     @Override
     public Hash hash(Webpage webpage) {
-        //three components to a hash.
-
-
-
         return null;
     }
 

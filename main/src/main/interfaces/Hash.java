@@ -1,3 +1,5 @@
+package main.interfaces;
+
 /**
  * Created by Fancy on 2/5/15.
  */

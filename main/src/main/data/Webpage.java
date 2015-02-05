@@ -1,3 +1,5 @@
+package main.data;
+
 import java.awt.image.BufferedImage;
 
 /**
