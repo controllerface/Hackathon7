@@ -1,7 +1,7 @@
 package main.interfaces;
 
 
-import main.WebPage;
+import main.data.WebPage;
 
 /**
  * Created by Fancy on 2/5/15.

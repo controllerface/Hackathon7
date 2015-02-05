@@ -1,6 +1,6 @@
 package main.sarah;
 
-import main.WebPage;
+import main.data.WebPage;
 import main.interfaces.Hash;
 import main.interfaces.Hasher;
 
