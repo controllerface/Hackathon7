@@ -1,10 +1,13 @@
 package main.interfaces;
 
+
+import main.WebPage;
+
 /**
  * Created by Fancy on 2/5/15.
  */
 public interface Hasher {
-    Hash hash(Webpage webpage);
+    Hash hash(WebPage webpage);
 
     /**
      *

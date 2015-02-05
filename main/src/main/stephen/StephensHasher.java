@@ -1,5 +1,6 @@
 package main.stephen;
 
+import main.WebPage;
 import main.interfaces.Hash;
 import main.interfaces.Hasher;
 
@@ -8,7 +9,7 @@ import main.interfaces.Hasher;
  */
 public class StephensHasher implements Hasher {
     @Override
-    public Hash hash(Webpage webpage) {
+    public Hash hash(WebPage webpage) {
         return null;
     }
 

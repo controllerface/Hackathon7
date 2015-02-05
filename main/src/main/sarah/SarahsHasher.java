@@ -1,5 +1,6 @@
 package main.sarah;
 
+import main.WebPage;
 import main.interfaces.Hash;
 import main.interfaces.Hasher;
 
@@ -8,7 +9,7 @@ import main.interfaces.Hasher;
  */
 public class SarahsHasher implements Hasher {
     @Override
-    public Hash hash(Webpage webpage) {
+    public Hash hash(WebPage webpage) {
         //three components to a hash.
 
 
