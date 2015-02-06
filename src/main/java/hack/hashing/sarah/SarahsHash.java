@@ -18,28 +18,28 @@ public class SarahsHash implements Hash {
     public SarahsHash(int size, double darkness, boolean compare) {
         this.size = size;
         this.darkness = darkness;
-        this.pixelHash = compare;
+        //this.pixelHash = compare;
     }
 
     public SarahsHash(){
     }
 
-    public getDarkness() {
-        //this is going to actually work as a dependency of pixelHash. as pixel hash needs to go through every element.
-
-    }
-
-    public getPixelHash(BufferedImage image){
-        for(int i=0;i<size;i++){
-            int x=0;
-            int y=0;
-
-
-            //getRGB returns an int TYPE_INT_ARGB, it needs x and y coords. but I have what I need to get that.
-            //size should be the total number of pixels. when x reaches width, increase y++ and bring x to 0.
-            image.getRGB(x,y)
-        }
-    }
+//    public getDarkness() {
+//        //this is going to actually work as a dependency of pixelHash. as pixel hash needs to go through every element.
+//
+//    }
+//
+//    public getPixelHash(BufferedImage image){
+//        for(int i=0;i<size;i++){
+//            int x=0;
+//            int y=0;
+//
+//
+//            //getRGB returns an int TYPE_INT_ARGB, it needs x and y coords. but I have what I need to get that.
+//            //size should be the total number of pixels. when x reaches width, increase y++ and bring x to 0.
+//            image.getRGB(x,y)
+//        }
+//    }
 
 
 

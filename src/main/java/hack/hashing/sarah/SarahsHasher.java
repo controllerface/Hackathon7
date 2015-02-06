@@ -27,8 +27,8 @@ public class SarahsHasher implements Hasher {
         final int WHITE=0xFFFFFFFF;
         final int BLACK=0xFF000000;
         BufferedImage[] pageImage=webpage.domImage();
-        SarahsHash myHash=new SarahsHash();
-        myHash.size=pageImage.getHeight()*pageImage.getWidth();
+        //SarahsHash myHash=new SarahsHash();
+        //myHash.size=pageImage.getHeight()*pageImage.getWidth();
 
 
 
