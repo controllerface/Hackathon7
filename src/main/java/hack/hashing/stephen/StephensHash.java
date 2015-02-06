@@ -1,6 +1,6 @@
-package main.stephen;
+package hack.hashing.stephen;
 
-import main.interfaces.Hash;
+import hack.hashing.interfaces.Hash;
 
 import java.util.Set;
 

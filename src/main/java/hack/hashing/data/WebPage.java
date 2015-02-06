@@ -1,4 +1,4 @@
-package main.data;
+package hack.hashing.data;
 
 import java.awt.image.BufferedImage;
 

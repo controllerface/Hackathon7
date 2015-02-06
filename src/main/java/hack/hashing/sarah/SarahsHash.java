@@ -1,6 +1,7 @@
-package main.sarah;
+package hack.hashing.sarah;
 
-import main.interfaces.Hash;
+
+import hack.hashing.interfaces.Hash;
 
 /**
  * Created by Fancy on 2/5/15.

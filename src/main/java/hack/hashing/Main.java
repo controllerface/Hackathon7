@@ -1,4 +1,4 @@
-package main;
+package main.java;
 
 /**
  * Created by Controllerface on 2/5/2015.

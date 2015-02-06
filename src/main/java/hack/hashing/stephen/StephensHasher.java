@@ -1,10 +1,15 @@
-package main.stephen;
+package hack.hashing.stephen;
 
-import main.data.WebPage;
-import main.interfaces.Hash;
-import main.interfaces.Hasher;
 
-import java.util.*;
+import hack.hashing.data.WebPage;
+import hack.hashing.interfaces.Hash;
+import hack.hashing.interfaces.Hasher;
+import hack.hashing.stephen.StephensHash;
+
+import java.util.ArrayDeque;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -18,7 +23,7 @@ public class StephensHasher implements Hasher {
                     ? Arrays.asList(SINGLE_SPACE)
                     : Arrays.asList(input.trim().replaceAll(WHITE_SPACE, SINGLE_SPACE).split(SINGLE_SPACE));
 
-    private static final BiFunction<StephensHash, StephensHash, HashSet<String>> hashUnion =
+    private static final BiFunction<StephensHash,StephensHash, HashSet<String>> hashUnion =
             (a, b) -> {
                 HashSet<String> union = new HashSet<>(a.shingleSet());
                 union.addAll(b.shingleSet());

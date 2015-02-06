@@ -1,8 +1,8 @@
-package main.sarah;
+package hack.hashing.sarah;
 
-import main.data.WebPage;
-import main.interfaces.Hash;
-import main.interfaces.Hasher;
+import hack.hashing.data.WebPage;
+import hack.hashing.interfaces.Hash;
+import hack.hashing.interfaces.Hasher;
 
 /**
  * Created by Fancy on 2/5/15.
