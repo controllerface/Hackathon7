@@ -1,10 +1,9 @@
 package hack.hashing.stephen;
 
-
 import hack.hashing.data.WebPage;
 import hack.hashing.interfaces.Hash;
 import hack.hashing.interfaces.Hasher;
-import hack.hashing.stephen.StephensHash;
+import org.jsoup.nodes.Element;
 
 import java.util.ArrayDeque;
 import java.util.Arrays;
@@ -15,6 +14,14 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class StephensHasher implements Hasher {
+
+    private static StephensHasher instance;
+    private StephensHasher(){}
+    public static StephensHasher getInstance(){
+        if (instance == null)
+            instance = new StephensHasher();
+        return instance;
+    }
 
     private static String SINGLE_SPACE = " ";
     private static String WHITE_SPACE = "\\s+";
@@ -35,10 +42,18 @@ public class StephensHasher implements Hasher {
                 intersection.retainAll(b.shingleSet());
                 return intersection;};
 
+    private static final WebPage.DomSerializer structureSerializer =
+            (document)  -> document
+                    .getAllElements()
+                    .stream()
+                    .map(Element::tagName)
+                    .filter(name->!name.startsWith("#"))
+                    .collect(Collectors.joining(" "));
+
     @Override
-    public Hash hash(WebPage webpage) {
+    public Hash hashMaker(WebPage webpage) {
         int shingleSize = 3;
-        List<String> unigrams = tokenizer.apply(webpage.domString());
+        List<String> unigrams = tokenizer.apply(webpage.domString(structureSerializer));
         ArrayDeque<String> shingle = new ArrayDeque<>(shingleSize);
         HashSet<String> shingleSet = new HashSet<>(unigrams.size() - (shingleSize - 1));
         unigrams.forEach(unigram -> { shingle.add(unigram);

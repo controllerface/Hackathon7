@@ -14,7 +14,7 @@ public class StephensHash implements Hash {
         this.shingleSet = shingleSet;
     }
 
-    Set<String> shingleSet(){
+    public Set<String> shingleSet(){
         return shingleSet;
     }
 }
