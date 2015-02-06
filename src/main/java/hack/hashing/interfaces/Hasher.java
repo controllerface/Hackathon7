@@ -6,7 +6,7 @@ import hack.hashing.data.WebPage;
  * Created by Fancy on 2/5/15.
  */
 public interface Hasher {
-    Hash hash(WebPage webpage);
+    Hash hashMaker(WebPage webpage);
 
     /**
      *
