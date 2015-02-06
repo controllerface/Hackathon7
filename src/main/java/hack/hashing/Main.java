@@ -1,4 +1,4 @@
-package main.java;
+package hack.hashing;
 
 /**
  * Created by Controllerface on 2/5/2015.
