@@ -1,7 +1,6 @@
-package main.interfaces;
+package hack.hashing.interfaces;
 
-
-import main.data.WebPage;
+import hack.hashing.data.WebPage;
 
 /**
  * Created by Fancy on 2/5/15.

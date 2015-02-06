@@ -1,15 +1,19 @@
-package main.stephen;
+package hack.hashing.sarah;
 
-import main.data.WebPage;
-import main.interfaces.Hash;
-import main.interfaces.Hasher;
+import hack.hashing.data.WebPage;
+import hack.hashing.interfaces.Hash;
+import hack.hashing.interfaces.Hasher;
 
 /**
- * Created by Controllerface on 2/5/2015.
+ * Created by Fancy on 2/5/15.
  */
-public class StephensHasher implements Hasher {
+public class SarahsHasher implements Hasher {
     @Override
     public Hash hash(WebPage webpage) {
+        //three components to a hash.
+
+
+
         return null;
     }
 
