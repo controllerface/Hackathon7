@@ -13,7 +13,8 @@ public class SarahsHash implements Hash {
     int size;
     double darkness;
     //for 20 slices through the data
-    int[][] pixelHash=new int[20][];
+    //int[][] pixelHash=new int[20][];
+    int[] pixelHash=new int[20];
     int whiteCount=0;
     int blackCount=0;
 
@@ -26,11 +27,11 @@ public class SarahsHash implements Hash {
     public SarahsHash(){
     }
 
-    public double getDarkness() {
+   // public double getDarkness() {
         //this is going to actually work as a dependency of getPixelHash.
           //as pixel hash needs to go through every element.
 
-    }
+    //}
 //
     public Hash getPixelHash(BufferedImage[] image){
         //only colors present.
@@ -100,6 +101,8 @@ public class SarahsHash implements Hash {
 //            //size should be the total number of pixels. when x reaches width, increase y++ and bring x to 0.
 //            image.getRGB(x,y)
         }
+        SarahsHash sarahsHash=new SarahsHash();
+        return sarahsHash;
     }
 
 
