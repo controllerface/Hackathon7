@@ -18,7 +18,17 @@ public class BinaryStringGrid {
     {
         return !(x >= width || y >= height) && data[x][y];
     }
-    //public int getWidth(){return width;}
+
+    public int countBlack(){
+        int blackCount=0;
+        for(int x=0;x<width;x++){
+            for(int y=0;y<height;y++){
+                if(data[x][y]){
+                    blackCount++;
+                }
+            }
+        }
+        return blackCount;}
     //public int getHeight(){return height;}
 
 }
