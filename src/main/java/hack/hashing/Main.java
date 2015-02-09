@@ -1,5 +1,7 @@
 package hack.hashing;
 
+import hack.hashing.data.BinaryStringGrid;
+import hack.hashing.data.BinaryStringGridArray;
 import hack.hashing.data.WebPage;
 import hack.hashing.interfaces.Hash;
 import hack.hashing.stephen.StephensHash;
@@ -16,20 +18,21 @@ import java.util.stream.Collectors;
 public class Main {
     public static void main(String[] args)
     {
-        String html = new BufferedReader(new InputStreamReader(Main.class.getResourceAsStream("/google.html")))
+        WebPage google = new WebPage(getHtml("google.html"));
+//        WebPage veracode = new WebPage(getHtml("veracode.html"));
+//        WebPage yahoo = new WebPage(getHtml("yahoo.html"));
+//        WebPage zappos = new WebPage(getHtml("zappos.html"));
+//        WebPage zappos_boots_front = new WebPage(getHtml("zappos_boots_front.html"));
+//        WebPage zappos_boots_back = new WebPage(getHtml("zappos_boots_back.html"));
+
+        BinaryStringGridArray grids = google.generateDOMGrids();
+    }
+
+    private static String getHtml(String fileName)
+    {
+        String html = new BufferedReader(new InputStreamReader(Main.class.getResourceAsStream("/" + fileName)))
                 .lines()
                 .collect(Collectors.joining());
-        WebPage test = new WebPage(html);
-
-        Hash hash = StephensHasher.getInstance().hashMaker(test);
-        ((StephensHash) hash).shingleSet().stream().forEach(System.out::println);
-
-        BufferedImage[] images = test.domImage();
-
-        try {
-            ImageIO.write(images[10], "png", new File("Text.png"));
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
+        return html;
     }
 }

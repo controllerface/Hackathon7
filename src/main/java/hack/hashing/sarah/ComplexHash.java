@@ -5,7 +5,7 @@ package hack.hashing.sarah;
  */
 public class ComplexHash {
     int imageHeight;
-    ComplexHash[] pixelLine;
+    int[] pixelLine;
     private ComplexHash(int[] xordLine ){
         pixelLine=xordLine;
 

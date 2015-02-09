@@ -14,14 +14,14 @@ public class SarahsHash implements Hash {
     double darkness;
     //for 20 slices through the data
     //int[][] pixelHash=new int[20][];
-    ComplexHash[] pixelHash=new ComplexHash[][20];
+    //ComplexHash[] pixelHash=new ComplexHash[][20];
     int whiteCount=0;
     int blackCount=0;
 
     public SarahsHash(int size, double darkness, int[] compare) {
         this.size = size;
         this.darkness = darkness;
-        this.pixelHash = compare;
+        //this.pixelHash = compare;
     }
 
     public SarahsHash(){
@@ -88,7 +88,7 @@ public class SarahsHash implements Hash {
                 }
                 //if we have reached the end the image, add the XORd line to the list of whole lines.
                 if(y==(thisHeight+1)){
-                    wholeLines[wholeLines.length].pixelLine=lastPixelLine;
+                   // wholeLines[wholeLines.length].pixelLine=lastPixelLine;
 
                 }
                 //ok we have gone through all the images.
@@ -106,7 +106,7 @@ public class SarahsHash implements Hash {
                         lineLength=wholeLines[m-1].pixelLine.length;
                     }
                     for (int b=0;b<lineLength;b++){
-                        wholeLines[m].pixelLine=wholeLines[m-1].pixelLine[]^wholeLines[m].pixelLine[];
+                        //wholeLines[m].pixelLine=wholeLines[m-1].pixelLine[]^wholeLines[m].pixelLine[];
                     }
                     //go through the lines, xor through numPerSection and throw them in the relevant part of pixelHash
                 }
