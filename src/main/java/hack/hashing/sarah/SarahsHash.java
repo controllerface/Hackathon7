@@ -14,7 +14,7 @@ public class SarahsHash implements Hash {
     double darkness;
     //for 20 slices through the data
     //int[][] pixelHash=new int[20][];
-    int[] pixelHash=new int[20];
+    ComplexHash[] pixelHash=new ComplexHash[][20];
     int whiteCount=0;
     int blackCount=0;
 
@@ -50,7 +50,8 @@ public class SarahsHash implements Hash {
             int[] lastPixelLine=new int[thisWidth];
             int[] thisPixelLine=new int[thisWidth];
             //this might not work
-            int[][] wholeLines= new int[thisLength][];
+            //array of line hashes as objects. to avoid array of arrays. cause confused.
+            ComplexHash[] wholeLines= new ComplexHash[thisHeight];
             size=thisLength+size;
             //this loops through the entire image and increases blackCount and whiteCount.
             //I need to change this so it sticks one line into a variable, and another line into a variabl
@@ -73,23 +74,40 @@ public class SarahsHash implements Hash {
                     x=0;
                     y=y+1;
                     if(lastPixelLine.length!=0) {
-                        for(int k=0;k<thisWidth;k++){
-                            lastPixelLine[k]=thisPixelLine[k] ^ lastPixelLine[k];
+                        for (int k = 0; k < thisWidth; k++) {
+                            lastPixelLine[k] = thisPixelLine[k] ^ lastPixelLine[k];
                         }
+                    }
+                    //just copy the array
+                    else{
+                        for (int k = 0; k < thisWidth; k++) {
+                            lastPixelLine[k] = thisPixelLine[k];
+                        }
+
                     }
                 }
                 //if we have reached the end the image, add the XORd line to the list of whole lines.
                 if(y==(thisHeight+1)){
-                    wholeLines[wholeLines.length]=lastPixelLine;
+                    wholeLines[wholeLines.length].pixelLine=lastPixelLine;
 
                 }
                 //ok we have gone through all the images.
                 //need to take wholeLines down to 20 lines.
                 int numLines=image.length;
                 int numPerSection=numLines/20;
-                for(int m=0;m<numLines;m++){
+                int lineLength;
+                for(int m=1;m<numLines;m++){
                     //keeping track of lines being xord
-                    int z=0;
+                    int z=1;
+                    if(wholeLines[m-1].pixelLine.length<wholeLines[m].pixelLine.length){
+                        lineLength=wholeLines[m].pixelLine.length;
+                    }
+                    else{
+                        lineLength=wholeLines[m-1].pixelLine.length;
+                    }
+                    for (int b=0;b<lineLength;b++){
+                        wholeLines[m].pixelLine=wholeLines[m-1].pixelLine[]^wholeLines[m].pixelLine[];
+                    }
                     //go through the lines, xor through numPerSection and throw them in the relevant part of pixelHash
                 }
             }
